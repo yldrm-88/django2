@@ -1,0 +1,15 @@
+{% extends 'index.html'%}
+
+{% block body %}
+    {% for i in ogrenci %}
+    <div class="row">
+        <div class="col-4">
+            <img  class="w-100" src="{{ i.resim.url }}" alt="">
+        </div>
+            <div class="col-8">
+                <h2>{{i.adSoyad}}</h2> 
+                <p>{{i.hakkinda}}</p>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock body%}

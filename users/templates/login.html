@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block body %}
+<!-- Register kısmında djangonunkini kullanmıştık bu sefer kendimiz oluşturacğız login kısmını -->
+<form class="form-control w-50 m-auto mt-5" method="POST">
+    {% csrf_token %}
+    <label class="label-control">Kullanıcı Adı:</label>
+    <input class="form-control" type="text" name="userName">
+   <label class="label-control" >Kullanıcı Şifre</label>
+    <input  class="form-control" type="password" name="userPass">
+    <button type="submit" class="btn btn-primary mt-2">Giriş Yap</button>
+</form>
+{% endblock body %}

@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block baslik %}
+Filtreleme
+{% endblock baslik %}
+
+{% block body %}
+<div class="row">
+    {% for ogrenci in ogrenciler %}
+   <div class="col-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ogrenci.resim.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ogrenci.adSoyad}}</h5>
+              <p class="card-text">{{ogrenci.hakkinda}}</p>
+              <a href="{% url 'detay' ogrenci.id %}" class="btn btn-primary">Detay</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}
